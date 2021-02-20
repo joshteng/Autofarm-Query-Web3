@@ -3,7 +3,7 @@
 To use:
 1. You need node.js installed
 2. `npm install`
-3. Supply necessary environment variables. You are free to do this however. In development, you may create a `.env` file at the root of this project.
+3. Supply necessary environment variables. You are free to do this how ever. In development, you may create a `.env` file at the root of this project.
 
     Sample content of `.env`
     ```
@@ -13,7 +13,7 @@ To use:
     ```
 4. Customize `config.js` according to what farms you are participating in.
 
-    The only tricky part is finding the farm's PID for whatever token you're farming. I haven't explored the best way to obtain the PID yet except to brute force it. You can use the `stakedWantTokens` function and manually go from 1 -> x and compare the output of the balance of your staked tokens and what you see on Autofarm's UI aka `https://autofarm.network/`. If you don't want to use the codebase here to figure it out, you can also interact with the smart contract at `https://bscscan.com/address/0x0895196562c7868c5be92459fae7f877ed450452#readContract` -> Contract -> Read Contract and scroll down to look for the `stakedWantTokens`
+    The only tricky part is in finding the farm's PID for whatever token you're farming. I haven't explored the best way to obtain the PID yet except to brute force it. You can use the `stakedWantTokens` function and manually go from 1 -> x and compare the output of the balance of your staked tokens and what you see on Autofarm's UI aka `https://autofarm.network/`. If you don't want to use the codebase here to figure it out, you can also interact with the smart contract at `https://bscscan.com/address/0x0895196562c7868c5be92459fae7f877ed450452#readContract` -> Contract -> Read Contract and scroll down to look for the `stakedWantTokens`
 5. To run this code with `npm run start`
 
 # Pool Pids
@@ -25,7 +25,7 @@ Here are the PIDs I recognize thus far:
 |WBNB|1|
 |BTCB|2|
 |ETH|3|
-|WBNB-AUTO|8|
+|WBNB-AUTO|6|
 |WBNB-CAKE|8|
 
 
