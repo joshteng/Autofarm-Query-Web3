@@ -34,5 +34,5 @@ This is just a very simple repository to show you how you can interact with Smar
 The code is somewhat specific to Autofarm (BSC) but you can adapt the code to work with ETH as well.
 
 *Potential features*
-1. Retrieve price
+1. Retrieve price either through a price data api provider (simplest) or querying the relevant liquidity pool smart contract and dividing the ratios to get a price (more complex and may not be accurate in the case of low activity liquidity pool with little to no arbitrageurs)
 2. In the case of staked LP tokens, query pool contract to find out the percentage ownership of the pool and the total locked paired assets and figure out how much of each token you own.
