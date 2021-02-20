@@ -26,8 +26,10 @@ async function getContractAbi(contractId) {
   return JSON.parse(res.data.result)
 }
 
-async function getBalance(contractId, assetPid, ownerAddress) {
-  const contractAbi = await getContractAbi(contractId)
+async function getAutoFarmBalance(contractId, assetPid, ownerAddress, abiImplementationContract = undefined) {
+  const abiContract = abiImplementationContract ? abiImplementationContract : contractId
+
+  const contractAbi = await getContractAbi(abiContract)
   const web3 = new Web3(config.BLOCKCHAIN_NODE);
   const farmContract = new web3.eth.Contract(contractAbi, contractId);
 
@@ -36,9 +38,28 @@ async function getBalance(contractId, assetPid, ownerAddress) {
   return +res
 }
 
+async function getBunnyFarmBalance(contractId, ownerAddress, abiImplementationContract = undefined) {
+  const abiContract = abiImplementationContract ? abiImplementationContract : contractId
+  const contractAbi = await getContractAbi(abiContract)
+  const web3 = new Web3(config.BLOCKCHAIN_NODE);
+  const farmContract = new web3.eth.Contract(contractAbi, contractId);
+
+  const res = await farmContract.methods.balanceOf(ownerAddress).call()
+
+  return +res
+}
+
 async function start() {
   config.AUTOFARMS.forEach(async (farm) => {
-    let balance = await getBalance(farm.contractAddress, farm.assetPid, farm.ownerAddress)
+    let balance = await getAutoFarmBalance(farm.contractAddress, farm.assetPid, farm.ownerAddress, farm.abiImplementationContract)
+
+    balance /= Math.pow(10, farm.assetDecimalPlaces)
+
+    console.log(`${farm.asset} ${balance}`)
+  })
+
+  config.BUNNYFARMS.forEach(async (farm) => {
+    let balance = await getBunnyFarmBalance(farm.contractAddress, farm.ownerAddress, farm.abiImplementationContract)
 
     balance /= Math.pow(10, farm.assetDecimalPlaces)
 
