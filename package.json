@@ -1,5 +1,5 @@
 {
-  "name": "testing",
+  "name": "Autofarm-Query-Web3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "joshteng",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
