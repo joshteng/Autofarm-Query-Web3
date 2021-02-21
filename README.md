@@ -1,5 +1,11 @@
 # Use Web3.js to Query Amount of Staked Tokens in Autofarm
 
+https://autofarm.network/
+https://pancakebunny.finance/
+
+Update:
+- Works for PancakeBunny farm too!
+
 To use:
 1. You need node.js installed
 2. `npm install`
