@@ -53,7 +53,7 @@ async function start() {
   config.AUTOFARMS.forEach(async (farm) => {
     let balance = await getAutoFarmBalance(farm.contractAddress, farm.assetPid, farm.ownerAddress, farm.abiImplementationContract)
 
-    balance /= Math.pow(10, farm.assetDecimalPlaces)
+    balance /= Math.pow(10, farm.assetDecimalPlaces) // might want to use web3 built-in utility functions to convert to prevent floating point errors
 
     console.log(`${farm.asset} ${balance}`)
   })
@@ -63,9 +63,8 @@ async function start() {
 
     balance /= Math.pow(10, farm.assetDecimalPlaces)
 
-    console.log(`${farm.asset} ${balance}`)
+    console.log(`${farm.asset} ${balance}`) // might want to use web3 built-in utility functions to convert to prevent floating point errors
   })
 }
 
 start()
-
