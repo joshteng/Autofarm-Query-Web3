@@ -19,7 +19,7 @@ To use:
 # Pool Pids
 As mentioned above, you are likely going to have to brute force or figure a better way to find the PIDs of your farm.
 
-Here are the PIDs I recognize thus far:
+Here are the PIDs I discovered thus far (21 Feb 2021):
 |Farm|PID|
 |---|---|
 |WBNB|1|
