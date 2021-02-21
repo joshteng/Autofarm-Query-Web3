@@ -34,6 +34,7 @@ async function getAutoFarmBalance(contractId, assetPid, ownerAddress, abiImpleme
   const farmContract = new web3.eth.Contract(contractAbi, contractId);
 
   const res = await farmContract.methods.stakedWantTokens(assetPid, ownerAddress).call()
+  // const res = await farmContract.methods.pendingAUTO(assetPid, ownerAddress).call() //this will retrieve unharvested AUTO reward
 
   return +res
 }
