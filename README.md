@@ -23,8 +23,8 @@ Here are the PIDs I recognize thus far:
 |Farm|PID|
 |---|---|
 |WBNB|1|
-|BTCB|2|
-|ETH|3|
+|BTCB|3|
+|ETH|4|
 |WBNB-AUTO|6|
 |WBNB-CAKE|8|
 
